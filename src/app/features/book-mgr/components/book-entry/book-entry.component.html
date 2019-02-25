@@ -1,0 +1,37 @@
+
+<form #form="ngForm">
+<div class="form-group">
+  <label>Title</label>
+  <input class="form-control" required name="aTitle" ngModel #f
+         #title="ngModel" [(ngModel)]="myTitle" autofocus>
+  <div *ngIf="title.errors" class="alert alert-danger">
+  Title is required.
+  </div>
+  <label>Author</label>
+  <input class="form-control" required
+         #author="ngModel" name="author" ngModel [(ngModel)]="myAuthor">
+  <div *ngIf="author.errors" class="alert alert-danger">
+  Author is required.
+  </div>
+  <br>
+
+  <div class="form-group">
+    <label>Book Format</label>
+    <select class="form-control" #format="ngModel" required name="format" ngModel [(ngModel)]="selectedBookFormat">
+      <option *ngFor="let bkFormat of bookForamts" >
+        {{ bkFormat.value }}
+      </option>
+    </select>
+  </div>
+
+  <div *ngIf="format.errors" class="alert alert-danger">
+  Format is required.
+  </div>
+  <br>
+  <input type="button"
+          (click)="add(f)"
+         class="btn btn-primary"
+         value="Add"
+         [disabled]="form.invalid">
+</div>
+</form>

@@ -1,0 +1,22 @@
+<h1>Books on Loan</h1>
+<th>Title</th>
+<th>Author</th>
+<th>Format</th>
+<th>On Loan</th>
+<tr class="list-unstyled"  *ngFor="let item of onLoanlist">
+  <td class="alert alert-info">
+    {{item.title}}
+  </td>
+  <td class="alert alert-info">
+      {{item.author}}
+  </td>
+  <td class="alert alert-info">
+      {{item.format}}
+  </td>
+  <td class="alert alert-info">
+      <input type="button"
+      (click)="returned(item)"
+     class="btn btn-primary"
+     value="Returned">
+  </td>
+</tr>

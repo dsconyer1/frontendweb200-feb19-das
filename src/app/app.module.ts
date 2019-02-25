@@ -12,6 +12,7 @@ import { TodoDataService } from './components/todo/todo-data.service';
 import { TodoEntryComponent } from './components/todo/todo-entry/todo-entry.component';
 import { TodoListComponent } from './components/todo/todo-list/todo-list.component';
 import { TodoComponent } from './components/todo/todo.component';
+import { BookMgrModule } from './features/book-mgr/book-mgr.module';
 import { TodosReduxModule } from './features/todos-redux/todos-redux.module';
 import { reducers } from './reducers';
 
@@ -31,6 +32,7 @@ import { reducers } from './reducers';
     BrowserModule,
     AppRoutingModule,
     TodosReduxModule,
+    BookMgrModule,
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([])

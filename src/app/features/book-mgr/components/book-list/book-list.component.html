@@ -1,0 +1,22 @@
+<h1>Books in Collection</h1>
+<th>Title</th>
+<th>Author</th>
+<th>Format</th>
+<th>On Loan</th>
+<tr class="list-unstyled"  *ngFor="let item of list">
+  <td class="alert alert-info">
+    {{item.title}}
+  </td>
+  <td class="alert alert-info">
+      {{item.author}}
+  </td>
+  <td class="alert alert-info">
+      {{item.format}}
+  </td>
+  <td class="alert alert-info">
+    <input type="button"
+      (click)="changeOnLoan(item)"
+     class="btn btn-primary"
+     value="Loan Out">
+  </td>
+</tr>
